@@ -4,6 +4,9 @@
 /public/hot
 /public/storage
 /storage/*.key
+/storage/*.log
+/storage/framework/*
+!storage/framework/.gitignore
 /storage/pail
 /vendor
 .env
@@ -17,6 +20,7 @@ npm-debug.log
 yarn-error.log
 /auth.json
 /.fleet
+/database/*.sqlite
 /.idea
 /.nova
 /.vscode
