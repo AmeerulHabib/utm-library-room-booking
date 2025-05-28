@@ -10,6 +10,12 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
           <div class="p-6 bg-white border-b border-gray-200">
             <div class="row">
+              {{-- Only admins may manage rooms --}}
+              @can('manage', App\Models\Room::class)
+                <a href="{{ route('rooms.create') }}" class="btn btn-success mb-3">
+                  Add New Room
+                </a>
+              @endcan
               @foreach ($rooms as $room)
                 <div class="col-md-4 mb-3">
                   <div class="card h-100 shadow-sm">
