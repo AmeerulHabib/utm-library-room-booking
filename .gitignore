@@ -13,6 +13,10 @@
 /.zed
 /auth.json
 /node_modules
+/laravel/node_modules
+/laravel/public/build
+/laravel/vendor
+/laravel/.env*
 /public/build
 /public/hot
 /public/storage
