@@ -26,11 +26,13 @@ class BookingPolicy
 
     /**
      * Determine whether the user can create models.
-     */
-    // public function create(User $user): bool
-    // {
-    //     return false;
-    // }
+        */
+    public function create(User $user)
+    {
+        return $user->role === 'admin'
+            || $user->role === 'staff'
+            || $user->role === 'user';
+    }
 
     /**
      * Determine whether the user can update the model.

@@ -16,7 +16,9 @@
                 <p><strong>Status:</strong> {{ ucfirst($booking->status) }}</p>
                 <p><strong>Notes:</strong> {{ $booking->notes }}</p>
                 <div class="mt-6">
+                    @can('update', $booking)
                     <a href="{{ route('bookings.edit', $booking) }}" class="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">Edit</a>
+                    @endcan
                     <a href="{{ route('bookings.index') }}" class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 ml-2">Back to List</a>
                 </div>
             </div>
