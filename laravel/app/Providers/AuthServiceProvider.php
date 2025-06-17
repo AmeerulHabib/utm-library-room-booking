@@ -3,13 +3,19 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\Booking;
+use App\Policies\BookingPolicy;
+use App\Models\Room;
+use App\Policies\RoomPolicy;
+
 
 
 
 class AuthServiceProvider extends ServiceProvider
 {
     protected $policies = [
-    \App\Models\Booking::class => \App\Policies\BookingPolicy::class,
+    Booking::class => BookingPolicy::class,
+    Room::class    => RoomPolicy::class,
     ];
 
     /**
