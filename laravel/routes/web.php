@@ -21,6 +21,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('rooms', RoomController::class);
     Route::resource('bookings', BookingController::class);
 
+    Route::patch('bookings/{booking}/approve', [BookingController::class, 'approve'])->name('bookings.approve');
+    Route::patch('bookings/{booking}/reject', [BookingController::class, 'reject'])->name('bookings.reject');
+
+
     // Profile routes
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
