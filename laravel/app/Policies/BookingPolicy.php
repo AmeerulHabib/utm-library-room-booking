@@ -26,7 +26,7 @@ class BookingPolicy
 
     /**
      * Determine whether the user can create models.
-        */
+     */
     public function create(User $user)
     {
         return $user->role === 'admin'
@@ -39,7 +39,7 @@ class BookingPolicy
      */
     public function update(User $user, Booking $booking)
     {
-        return $user->role === 'admin' || $user->role === 'staff' || $user->id === $booking->user_id;
+        return in_array($user->role, ['admin', 'staff']);
     }
 
     /**
