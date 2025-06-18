@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\Admin\UserManagementController;
 use Illuminate\Support\Facades\Route;
 
 // Guest landing page (home, for users who are not logged in)
@@ -15,6 +16,11 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+Route::middleware('can:manage-users')->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('users', UserManagementController::class);
+});
+
 
 // Resource routes for Room and Booking management (authenticated users only)
 Route::middleware(['auth'])->group(function () {
@@ -32,4 +38,4 @@ Route::middleware(['auth'])->group(function () {
 });
 
 // Auth routes (Laravel Breeze)
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

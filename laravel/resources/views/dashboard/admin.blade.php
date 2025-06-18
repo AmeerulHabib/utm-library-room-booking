@@ -14,12 +14,16 @@
                     <!-- Navigation Buttons -->
                     <div class="mt-8 flex gap-4">
                         <a href="{{ route('bookings.index') }}"
-                           class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
                             Manage Bookings
                         </a>
                         <a href="{{ route('rooms.index') }}"
-                           class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+                            class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
                             Manage Rooms
+                        </a>
+                        <a href="{{ route('admin.users.index') }}"
+                            class="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700">
+                            Manage Users
                         </a>
                     </div>
                 </div>
