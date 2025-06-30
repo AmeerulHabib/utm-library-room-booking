@@ -26,5 +26,11 @@ class DatabaseSeeder extends Seeder
             ->count(5)
             ->withPersonalTeam()
             ->create();
+
+        $this->call([
+            PermissionSeeder::class,
+            RoleSeeder::class,
+            DefaultUserSeeder::class,
+        ]);
     }
 }
