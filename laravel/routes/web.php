@@ -14,4 +14,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    // Test route to check authentication and authorization
+    Route::get('/test-auth', function () {
+        return 'You are authenticated as ' . Auth::user()->email . ' and authorized!';
+    });
 });

@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,11 +12,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->withPersonalTeam()->create();
+        // Create a single demo user with a known email/password, with a personal team
+        User::factory()
+            ->withPersonalTeam()
+            ->create([
+                'name' => 'Demo User',
+                'email' => 'demo@example.com',
+                'password' => bcrypt('demo123'), // Known password!
+            ]);
 
-        User::factory()->withPersonalTeam()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // Optionally: create 5 random users with teams
+        User::factory()
+            ->count(5)
+            ->withPersonalTeam()
+            ->create();
     }
 }
