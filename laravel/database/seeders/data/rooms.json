@@ -1,0 +1,163 @@
+[
+  {
+    "name": "Seminar Room",
+    "location": "PSZ UTM JB",
+    "capacity": 130,
+    "type": "Seminar Room",
+    "description": "2 rooms with 30 seats each; 1 large room with 130 seats."
+  },
+  {
+    "name": "Seminar Room",
+    "location": "PRZS UTM JB",
+    "capacity": 56,
+    "type": "Seminar Room",
+    "description": "2 rooms with 56 seats each."
+  },
+  {
+    "name": "Seminar Room",
+    "location": "PSZ UTM KL",
+    "capacity": 40,
+    "type": "Seminar Room",
+    "description": "3 rooms with 30–40 seats each."
+  },
+  {
+    "name": "Viewing Room",
+    "location": "PSZ UTM JB",
+    "capacity": 50,
+    "type": "Viewing Room",
+    "description": "1 room with 50 seats for multimedia viewing."
+  },
+  {
+    "name": "Viewing Room",
+    "location": "PSZ UTM KL",
+    "capacity": 30,
+    "type": "Viewing Room",
+    "description": "1 room with 20–30 seats for multimedia viewing."
+  },
+  {
+    "name": "Discussion Room",
+    "location": "PSZ UTM JB",
+    "capacity": 6,
+    "type": "Discussion Room",
+    "description": "10 rooms each seating up to 6 people for group discussion."
+  },
+  {
+    "name": "Discussion Room",
+    "location": "PRZS UTM JB",
+    "capacity": 17,
+    "type": "Discussion Room",
+    "description": "2 rooms each seating up to 17 people for group discussion."
+  },
+  {
+    "name": "Discussion Room",
+    "location": "PSZ UTM KL",
+    "capacity": 6,
+    "type": "Discussion Room",
+    "description": "12 rooms each seating 3–6 people for group discussion."
+  },
+  {
+    "name": "Carrel Room (4-hour/pax)",
+    "location": "PSZ UTM JB",
+    "capacity": 1,
+    "type": "Carrel Room",
+    "description": "69 single-occupancy carrel rooms (4-hour booking)."
+  },
+  {
+    "name": "Carrel Room (4-hour/pax)",
+    "location": "PRZS UTM JB",
+    "capacity": 1,
+    "type": "Carrel Room",
+    "description": "24 single-occupancy carrel rooms (4-hour booking)."
+  },
+  {
+    "name": "Carrel Room (4-hour/pax)",
+    "location": "PSZ UTM KL",
+    "capacity": 1,
+    "type": "Carrel Room",
+    "description": "22 single-occupancy carrel rooms (4-hour booking)."
+  },
+  {
+    "name": "Research Carrel (1-day/pax)",
+    "location": "PSZ UTM KL",
+    "capacity": 1,
+    "type": "Research Carrel",
+    "description": "10 single-occupancy research carrels (1-day booking)."
+  },
+  {
+    "name": "Exhibition Area",
+    "location": "PSZ UTM JB",
+    "capacity": 0,
+    "type": "Exhibition Area",
+    "description": "1 exhibition area (open space)."
+  },
+  {
+    "name": "Study Room (24-hour)",
+    "location": "PRZS UTM JB",
+    "capacity": 4,
+    "type": "Study Room",
+    "description": "1 study room open 24 hours, seating up to 4."
+  },
+  {
+    "name": "Information Searching Laboratory",
+    "location": "PSZ UTM JB",
+    "capacity": 40,
+    "type": "Information Lab",
+    "description": "2 labs each with 40 seats for information searching."
+  },
+  {
+    "name": "Information Searching Laboratory",
+    "location": "PRZS UTM JB",
+    "capacity": 18,
+    "type": "Information Lab",
+    "description": "1 lab with 18 seats for information searching."
+  },
+  {
+    "name": "Information Searching Laboratory",
+    "location": "PSZ UTM KL",
+    "capacity": 8,
+    "type": "Information Lab",
+    "description": "1 lab with 8 seats for information searching."
+  },
+  {
+    "name": "Researcher Common Room",
+    "location": "PRZS UTM JB",
+    "capacity": 8,
+    "type": "Common Room",
+    "description": "1 common room with 8 seats for researchers."
+  },
+  {
+    "name": "Executive Room",
+    "location": "PRZS UTM JB",
+    "capacity": 8,
+    "type": "Executive Room",
+    "description": "1 executive room with 8 seats."
+  },
+  {
+    "name": "Researcher Discussion Room",
+    "location": "PRZS UTM JB",
+    "capacity": 8,
+    "type": "Research Discussion Room",
+    "description": "1 discussion room with 8 seats for research groups."
+  },
+  {
+    "name": "Online Databases Reference Room",
+    "location": "PRZS UTM JB",
+    "capacity": 17,
+    "type": "Reference Room",
+    "description": "1 room with 17 seats for online database access."
+  },
+  {
+    "name": "Multimedia Viewing Room",
+    "location": "PRZS UTM JB",
+    "capacity": 35,
+    "type": "Multimedia Viewing Room",
+    "description": "1 room with 35 seats for multimedia presentations."
+  },
+  {
+    "name": "Thesis Reference Area",
+    "location": "PRZS UTM JB",
+    "capacity": 32,
+    "type": "Reference Area",
+    "description": "1 area with 32 seats for thesis consultation."
+  }
+]
