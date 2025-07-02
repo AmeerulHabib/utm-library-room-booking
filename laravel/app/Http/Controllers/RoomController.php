@@ -21,6 +21,8 @@ class RoomController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Room::class);
+
         return view('rooms.create');
     }
 
@@ -29,6 +31,8 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Room::class);
+
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'location' => 'nullable|string|max:255',
@@ -55,6 +59,8 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
+        $this->authorize('update', $room);
+
         return view('rooms.edit', compact('room'));
     }
 
@@ -63,6 +69,8 @@ class RoomController extends Controller
      */
     public function update(Request $request, Room $room)
     {
+        $this->authorize('update', $room);
+
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'location' => 'nullable|string|max:255',
@@ -81,6 +89,8 @@ class RoomController extends Controller
      */
     public function destroy(Room $room)
     {
+        $this->authorize('delete', $room);
+
         $room->delete();
         return redirect()->route('rooms.index')->with('success', 'Room deleted successfully!');
     }

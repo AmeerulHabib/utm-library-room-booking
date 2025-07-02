@@ -65,7 +65,8 @@ class BookingController extends Controller
      */
     public function show(Booking $booking)
     {
-        // $this->authorize('view', $booking);
+        $this->authorize('view', $booking);
+
         return view('bookings.show', compact('booking'));
     }
 
@@ -74,7 +75,8 @@ class BookingController extends Controller
      */
     public function edit(Booking $booking)
     {
-        // $this->authorize('update', $booking);
+        $this->authorize('update', $booking);
+
         $rooms = Room::all();
         return view('bookings.edit', compact('booking', 'rooms'));
     }
@@ -84,7 +86,7 @@ class BookingController extends Controller
      */
     public function update(Request $request, Booking $booking)
     {
-        // $this->authorize('update', $booking);
+        $this->authorize('update', $booking);
 
         $validated = $request->validate([
             'room_id' => 'required|exists:rooms,id',
@@ -102,9 +104,10 @@ class BookingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy( $booking)
+    public function destroy($booking)
     {
-        // $this->authorize('delete', $booking);
+        $this->authorize('delete', $booking);
+
         $booking->delete();
         return redirect()->route('bookings.index')->with('success', 'Booking deleted successfully!');
     }
