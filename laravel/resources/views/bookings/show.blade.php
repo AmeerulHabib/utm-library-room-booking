@@ -15,10 +15,35 @@
                 <p><strong>End:</strong> {{ $booking->end_time }}</p>
                 <p><strong>Status:</strong> {{ ucfirst($booking->status) }}</p>
                 <p><strong>Notes:</strong> {{ $booking->notes }}</p>
-                <div class="mt-6">
+
+                <div class="mt-6 flex gap-2">
                     <a href="{{ route('bookings.edit', $booking) }}" class="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">Edit</a>
-                    <a href="{{ route('bookings.index') }}" class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 ml-2">Back to List</a>
+                    <a href="{{ route('bookings.index') }}" class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">Back to List</a>
                 </div>
+
+                @can('update', $booking)
+                    @if($booking->status === 'pending')
+                        <div class="mt-4 flex flex-row gap-2">
+                            <form action="{{ route('bookings.approve', $booking) }}" method="POST" class="inline">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+                                    onclick="return confirm('Approve this booking?')">
+                                    Approve
+                                </button>
+                            </form>
+                            <form action="{{ route('bookings.reject', $booking) }}" method="POST" class="inline">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+                                    onclick="return confirm('Reject this booking?')">
+                                    Reject
+                                </button>
+                            </form>
+                        </div>
+                    @endif
+                @endcan
+
             </div>
         </div>
     </div>

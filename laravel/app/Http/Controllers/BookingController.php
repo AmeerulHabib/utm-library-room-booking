@@ -111,4 +111,18 @@ class BookingController extends Controller
         $booking->delete();
         return redirect()->route('bookings.index')->with('success', 'Booking deleted successfully!');
     }
+
+    public function approve(Booking $booking)
+    {
+        $this->authorize('update', $booking);
+        $booking->update(['status' => 'approved']);
+        return redirect()->route('bookings.index')->with('success', 'Booking approved successfully.');
+    }
+
+    public function reject(Booking $booking)
+    {
+        $this->authorize('update', $booking);
+        $booking->update(['status' => 'rejected']);
+        return redirect()->route('bookings.index')->with('success', 'Booking rejected successfully.');
+    }
 }
