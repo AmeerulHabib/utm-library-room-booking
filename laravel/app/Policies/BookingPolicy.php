@@ -37,7 +37,7 @@ class BookingPolicy
      */
     public function update(User $user, Booking $booking): bool
     {
-        return $user->role === 'admin' || $user->role === 'staff' || $user->id === $booking->user_id;
+        return in_array($user->role, ['admin', 'staff']) || $booking->user_id === $user->id;
     }
 
     /**

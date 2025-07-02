@@ -18,6 +18,9 @@ Route::middleware([
         ->name('dashboard');
     Route::resource('bookings', BookingController::class);
     Route::resource('rooms', RoomController::class);
+    Route::patch('/bookings/{booking}/approve', [BookingController::class, 'approve'])->name('bookings.approve');
+    Route::patch('/bookings/{booking}/reject', [BookingController::class, 'reject'])->name('bookings.reject');
+
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');
