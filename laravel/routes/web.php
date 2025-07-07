@@ -20,6 +20,7 @@ Route::middleware([
     Route::resource('rooms', RoomController::class);
     Route::patch('/bookings/{booking}/approve', [BookingController::class, 'approve'])->name('bookings.approve');
     Route::patch('/bookings/{booking}/reject', [BookingController::class, 'reject'])->name('bookings.reject');
+    Route::view('/change-password', 'profile.change-password')->name('password.change');
 
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
