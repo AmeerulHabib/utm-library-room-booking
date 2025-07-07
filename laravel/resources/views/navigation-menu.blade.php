@@ -20,7 +20,9 @@
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <!-- Teams Dropdown -->
-                @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+                {{-- Comment if(false) & Uncomment if(Laravel) to display teams --}}
+                {{-- @if (Laravel\Jetstream\Jetstream::hasTeamFeatures()) --}}
+                @if (false)
                     <div class="ms-3 relative">
                         <x-dropdown align="right" width="60">
                             <x-slot name="trigger">
@@ -182,7 +184,9 @@
                 </form>
 
                 <!-- Team Management -->
-                @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+                {{-- Comment if(false) & Uncomment if(Laravel) to display teams --}}
+                {{-- @if (Laravel\Jetstream\Jetstream::hasTeamFeatures()) --}}
+                @if (false)
                     <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
                     <div class="block px-4 py-2 text-xs text-gray-400">
