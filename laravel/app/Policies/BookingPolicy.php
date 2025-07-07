@@ -63,4 +63,14 @@ class BookingPolicy
     // {
     //     return false;
     // }
+
+    public function approve(User $user, Booking $booking): bool
+    {
+        return in_array($user->role, ['admin', 'staff']);
+    }
+
+    public function reject(User $user, Booking $booking): bool
+    {
+        return in_array($user->role, ['admin', 'staff']);
+    }
 }
