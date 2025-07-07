@@ -114,14 +114,14 @@ class BookingController extends Controller
 
     public function approve(Booking $booking)
     {
-        $this->authorize('update', $booking);
+        $this->authorize('approve', $booking); // <- only admin/staff!
         $booking->update(['status' => 'approved']);
         return redirect()->route('bookings.index')->with('success', 'Booking approved successfully.');
     }
 
     public function reject(Booking $booking)
     {
-        $this->authorize('update', $booking);
+        $this->authorize('reject', $booking); // <- only admin/staff!
         $booking->update(['status' => 'rejected']);
         return redirect()->route('bookings.index')->with('success', 'Booking rejected successfully.');
     }

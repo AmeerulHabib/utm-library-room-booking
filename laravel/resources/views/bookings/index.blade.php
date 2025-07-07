@@ -32,10 +32,14 @@
                                 <td>
                                     <a href="{{ route('bookings.show', $booking) }}"
                                         class="text-blue-500 underline">View</a>
+
                                     @can('update', $booking)
                                         <a href="{{ route('bookings.edit', $booking) }}"
                                             class="text-yellow-500 underline mx-2">Edit</a>
-                                        @if ($booking->status === 'pending')
+                                    @endcan
+
+                                    @if ($booking->status === 'pending')
+                                        @can('approve', $booking)
                                             <form action="{{ route('bookings.approve', $booking) }}" method="POST"
                                                 class="inline">
                                                 @csrf
@@ -43,6 +47,8 @@
                                                 <button type="submit" class="text-green-600 underline"
                                                     onclick="return confirm('Approve this booking?')">Approve</button>
                                             </form>
+                                        @endcan
+                                        @can('reject', $booking)
                                             <form action="{{ route('bookings.reject', $booking) }}" method="POST"
                                                 class="inline">
                                                 @csrf
@@ -50,7 +56,10 @@
                                                 <button type="submit" class="text-red-600 underline"
                                                     onclick="return confirm('Reject this booking?')">Reject</button>
                                             </form>
-                                        @endif
+                                        @endcan
+                                    @endif
+
+                                    @can('delete', $booking)
                                         <form action="{{ route('bookings.destroy', $booking) }}" method="POST"
                                             class="inline">
                                             @csrf
@@ -59,6 +68,7 @@
                                                 onclick="return confirm('Delete this booking?')">Delete</button>
                                         </form>
                                     @endcan
+
                                 </td>
                             </tr>
                         @endforeach
