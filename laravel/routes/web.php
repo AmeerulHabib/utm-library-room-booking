@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\Admin\UserManagementController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,6 +22,11 @@ Route::middleware([
     Route::patch('/bookings/{booking}/approve', [BookingController::class, 'approve'])->name('bookings.approve');
     Route::patch('/bookings/{booking}/reject', [BookingController::class, 'reject'])->name('bookings.reject');
     Route::view('/change-password', 'profile.change-password')->name('password.change');
+
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::resource('users', UserManagementController::class);
+    });
+
 
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
